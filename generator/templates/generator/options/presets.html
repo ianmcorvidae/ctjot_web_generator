@@ -1,8 +1,51 @@
-      <div class="border border-primary rounded p-2">
-        <button class="btn btn-primary mt-1 mb-1" type="button" onclick="resetAll()">Reset All</button>
-        <button class="btn btn-primary mt-1 mb-1" type="button" onclick="presetRace()">Race</button>
-        <button class="btn btn-primary mt-1 mb-1" type="button" onclick="presetNewPlayer()">New Player</button>
-        <button class="btn btn-primary mt-1 mb-1" type="button" onclick="presetLostWorlds()">Lost Worlds</button>
-        <button class="btn btn-primary mt-1 mb-1" type="button" onclick="presetHard()">Hard</button>
-        <button class="btn btn-primary mt-1 mb-1" type="button" onclick="presetLegacyOfCyrus()">Legacy of Cyrus</button>
+      <div class="row no-gutters border border-primary rounded p-2">
+	<div class="col-1"></div>
+	<div class="border col-2">
+        <button class="btn btn-primary btn-block my-1" type="button" onclick="presetNewPlayer()">Gato Cup</button>
+	<p class="px-1">This flagset is designed for new players.</p>
+	<ul class="pl-4 pr-1">
+	  <li>Goal: Defeat Lavos or Zeal</li>
+	  <li>Easy item difficulty</li>
+	  <li>Magic is unlocked</li>
+	  <li>Free menu glitch</li>
+	  <li>Improved tabs</li>
+	</ul>
+	</div>
+	<div class="border col-2">
+        <button class="btn btn-primary btn-block my-1" type="button" onclick="presetRace()">Millennial Prix</button>
+	<p class="px-1">League standard race flags.</p>
+	<ul class="pl-4 pr-1">
+	  <li>Goal: Defeat Lavos or Zeal</li>
+	  <li>Normal item difficulty</li>
+	  <li>Magic is locked</li>
+	</ul>
+	</div>
+	<div class="border col-2">
+        <button class="btn btn-primary btn-block my-1" type="button" onclick="presetHard()">Catalack Top 8</button>
+	<p class="px-1">Tournament "Top 8" flags.</p>
+	<ul class="pl-4 pr-1">
+	  <li>Goal: Defeat Lavos or Zeal</li>
+	  <li>Hard item difficulty</li>
+	  <li>Gear and Healing Items randomized</li>
+	  <li>Magic is locked</li>
+	</ul>
+	</div>
+	<div class="border col-2">
+        <button class="btn btn-primary btn-block my-1" type="button" onclick="presetLostWorlds()">Lost Worlds</button>
+	<p class="px-1">A special game mode in which 1000AD and 600AD are not available.</p>
+	<ul class="pl-4 pr-1">
+	  <li>Goal: Defeat Lavos or Zeal</li>
+	  <li>Magic is unlocked</li>
+	</ul>
+	</div>
+	<div class="border col-2">
+        <button class="btn btn-primary btn-block my-1" type="button" onclick="presetLegacyOfCyrus()">Legacy of Cyrus</button>
+	<p class="px-1">A special game mode celebrating Frog, Magus, and Cyrus.</p>
+	<ul class="pl-4 pr-1">
+	  <li>Goal: Defeat Ozzie in Ozzie's Fort</li>
+	  <li>Frog &amp; Magus must be recruited</li>
+	  <li>Magic is unlocked</li>
+	</ul>
+	</div>
       </div>
+      <button class="btn btn-primary btn-block my-1" type="button" onclick="resetAll()">Reset All</button>

@@ -226,8 +226,14 @@ function applyPreset(preset) {
 
   rcCheckAll();
 
+  const roSetting = ((key) => {
+    if(!preset.settings.boss_rando_settings) { return false; }
+    return preset.settings.boss_rando_settings[key] || false;
+  });
+
   // Boss Rando options
-  $('#id_legacy_boss_placement').prop('checked', false).change();
+  $('#id_legacy_boss_placement').prop('checked', roSetting("legacy_boss_placement")).change();
+  $('#id_boss_spot_hp').prop('checked', roSetting("boss_spot_hp")).change();
 
   // Mystery Seed options
   const mysterySetting = ((field, key) => {
@@ -285,8 +291,12 @@ function presetRace() {
           "GameFlags.FIX_GLITCH",
           "GameFlags.ZEAL_END",
           "GameFlags.FAST_PENDANT",
-          "GameFlags.FAST_TABS"
-        ]
+          "GameFlags.BOSS_RANDO",
+          "GameFlags.FAST_TABS",
+        ],
+	"boss_rando_settings": {
+	  "boss_spot_hp": true,
+	},
       }
     }
   );
@@ -309,9 +319,23 @@ function presetNewPlayer() {
           "GameFlags.ZEAL_END",
           "GameFlags.FAST_PENDANT",
           "GameFlags.UNLOCKED_MAGIC",
+          "GameFlags.BOSS_RANDO",
           "GameFlags.VISIBLE_HEALTH",
-          "GameFlags.FAST_TABS"
-        ]
+          "GameFlags.FAST_TABS",
+          "GameFlags.BOSS_SIGHTSCOPE",
+          "GameFlags.FREE_MENU_GLITCH",
+        ],
+	"boss_rando_settings": {
+	  "boss_spot_hp": true,
+	},
+	"tab_settings": {
+	  "power_tab_min": 2,
+	  "power_tab_max": 4,
+	  "magic_tab_min": 2,
+	  "magic_tab_max": 3,
+	  "speed_tab_min": 1,
+	  "speed_tab_max": 1,
+	}
       }
     }
   );
@@ -347,16 +371,22 @@ function presetHard() {
     {
       "settings": {
         "game_mode": "Standard",
-        "enemy_difficulty": "Hard",
+        "enemy_difficulty": "Normal",
         "item_difficulty": "Hard",
-        "techorder": "Balanced random",
+        "techorder": "Full random",
         "shopprices": "Normal",
         "gameflags": [
           "GameFlags.FIX_GLITCH",
-          "GameFlags.BOSS_SCALE",
-          "GameFlags.LOCKED_CHARS",
-          "GameFlags.FAST_TABS"
-        ]
+          "GameFlags.ZEAL_END",
+          "GameFlags.FAST_PENDANT",
+          "GameFlags.BOSS_RANDO",
+          "GameFlags.FAST_TABS",
+          "GameFlags.GEAR_RANDO",
+          "GameFlags.HEALING_ITEM_RANDO",
+        ],
+	"boss_rando_settings": {
+	  "boss_spot_hp": true,
+	},
       }
     }
   );
@@ -380,7 +410,10 @@ function presetLegacyOfCyrus() {
           "GameFlags.UNLOCKED_MAGIC",
           "GameFlags.FAST_TABS",
           "GameFlags.GEAR_RANDO"
-        ]
+        ],
+	"boss_rando_settings": {
+	  "boss_spot_hp": true,
+	},
       }
     }
   );
